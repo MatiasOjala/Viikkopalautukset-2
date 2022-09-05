@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Server Programming</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p th:text="'Hei! Tässä on lista oppilaista!'"/>
+   <table>
+        <tr th:each="oppilas : ${studentsList}">
+            <td th:text="${oppilas.fname}"></td>
+            <td th:text="${oppilas.lname}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

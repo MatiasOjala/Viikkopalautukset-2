@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Server Programming</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>My friends</h1>
+
+   <table>
+        <tr th:each="friends : ${friendsList}">
+            <td th:text="${friends.fname}"></td>
+        </tr>
+    </table>
+
+<h2>Add new friend to list</h2>
+<form action="#" th:action="@{/index}" th:object="${name}" method="get">
+    	<table>
+        <tr>
+        	<td>Full name: <input type="text" th:field="*{fname}" /></td>
+        	<td th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}">Error</td>
+        </tr>
+        </table>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>
